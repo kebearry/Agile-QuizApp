@@ -34,7 +34,7 @@ function Quiz(props) {
         <div className="bottom-footer" >
           {props.counter > 0 ? (<button className="Previous-btn" onClick={props.setPreviousQuestion} >Previous</button>) : (<div></div>)}
 
-          {props.counter < 4 ? (<button className="next-btn" onClick={props.setNextQuestion} >Next</button>) : (<div></div>)}
+          {props.counter < 7 ? (<button className="next-btn" onClick={props.setNextQuestion} >Next</button>) : (<div></div>)}
 
       </div>
       </div>
