@@ -1,15 +1,17 @@
 
 import React, { Component } from 'react';
+import Lottie from 'react-lottie'
 import quizQuestions from './api/questions';
 import Quiz from './components/Quiz';
 import Result from './components/Result';
+import FinanceJSON from './finance';
+import { FacebookLoginButton } from "react-social-login-buttons";
+import { logicalExpression } from '@babel/types';
 require('./App.css')
-
 class App extends Component {
 
   constructor(props) {
     super(props);
-
     this.state = {
       counter: 0,
       questionId: 1,
@@ -18,14 +20,16 @@ class App extends Component {
       allQuestions: [],
       answer: '',
       selectedAnswers: {},
-      result: ''
+      result: '',
+      isLoggedIn: false,
     };
     this.setNextQuestion = this.setNextQuestion.bind(this);
     this.setPreviousQuestion = this.setPreviousQuestion.bind(this);
     this.handleAnswerSelected = this.handleAnswerSelected.bind(this);
     this.viewresults = this.viewresults.bind(this);
-
+    this.login = this.login.bind(this);
   }
+
   handleAnswerSelected(e) {
     var _self = this;
     var obj = _self.state.selectedAnswers;
@@ -35,7 +39,10 @@ class App extends Component {
     // create map and store all selecred answers with quiz Questions
     obj[Qindex] = index;
     _self.setState({ selectedAnswers: obj })
+  }
 
+  login() {
+    this.setState({ isLoggedIn: true })
   }
 
   componentWillMount() {
@@ -117,12 +124,35 @@ class App extends Component {
   }
 
   render() {
+    const defaultOption = {
+      loop: true,
+      autoplay: true,
+      animationData: FinanceJSON,
+      rendererSettings: {
+        preserveAspectRatio: 'xMidYMid slice'
+      }
+    }
+
     return (
       <div className="App">
         <div className="App-header">
           <h1>What Type of Investor Are You?</h1>
         </div>
-        {this.state.result ? this.renderResult() : this.renderQuiz()}
+        {this.state.isLoggedIn ?
+          <div>
+            {this.state.result ? this.renderResult() : this.renderQuiz()}
+          </div> :
+          <div>
+            <Lottie options={defaultOption}
+              height={400}
+              width={400}
+            />
+            <div className="row">
+              <div className="fb-button">
+                <FacebookLoginButton onClick={() => this.login()} />
+              </div>
+            </div>
+          </div>}
       </div>
 
     );

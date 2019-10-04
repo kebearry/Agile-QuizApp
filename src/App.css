@@ -79,3 +79,11 @@ h1 {
   background-color: whitesmoke;
   padding: 25px;
 }
+.fb-button{
+  width: 25%;
+}
+.row{
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+}

@@ -5,7 +5,9 @@
   "dependencies": {
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
-    "react-scripts": "3.2.0"
+    "react-lottie": "^1.2.3",
+    "react-scripts": "3.2.0",
+    "react-social-login-buttons": "^3.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
