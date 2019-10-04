@@ -1,22 +1,81 @@
-.App {
-  text-align: center;
+@import url(https://fonts.googleapis.com/css?family=Cabin:300,400,600,700|Lato:300,400,600,700|Roboto+Condensed:300,700|Open+Sans+Condensed:300,600|Open+Sans:400,300,600,700|Maven+Pro:400,700);
+@import url(https://fonts.googleapis.com/css?family=Satisfy|Pathway+Gothic+One);
+
+h1 {
+  font-family: 'Satisfy', 'cursive';
+  font-size: 3em;
 }
 
 .App-logo {
-  height: 40vmin;
+  animation: spin infinite 20s linear;
+  height: 80px;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: #00477b;
+  padding: 20px;
   color: white;
+  text-align: center;
 }
 
-.App-link {
-  color: #09d3ac;
+.App-intro {
+  font-size: large;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.radioCustomLabel {
+  position: relative;
+  width: 100% !important;
+  margin: 0;
+  padding: 0px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.answerOption {
+  width: 150px;
+  float: left;
+  display: inherit;
+  margin-right: 10px;
+}
+.next-btn{
+
+}
+.Previous-btn{
+
+}
+.result-link {
+  float: right;
+    /* background-color: green; */
+  color: #000000;
+}
+.status{
+  color: green;
+}
+.list-grp {
+  text-align: left;
+    line-height: 1.5;
+    padding: 10px;
+    background: #ccc;
+}
+.quiz-story{
+  padding: 30px;
+  width: 80vw;
+  background-color: white;
+  /* padding-left: 10px; */
+  margin: auto;
+  min-height: 400px;
+  text-align: center;
+  border-radius: 10px;
+}
+.selected-btn {
+  color: white;
+  background-color: #00477b;
+}
+.bottom-footer{
+  margin-top: 30px;
+  background-color: whitesmoke;
+  padding: 25px;
 }
