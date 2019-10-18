@@ -5,9 +5,10 @@ import quizQuestions from './api/questions';
 import Quiz from './components/Quiz';
 import Result from './components/Result';
 import FinanceJSON from './finance';
-import { FacebookLoginButton } from "react-social-login-buttons";
 import { logicalExpression } from '@babel/types';
+import FacebookLogin from 'react-facebook-login';
 require('./App.css')
+
 class App extends Component {
 
   constructor(props) {
@@ -22,6 +23,7 @@ class App extends Component {
       selectedAnswers: {},
       result: '',
       isLoggedIn: false,
+      user: {}
     };
     this.setNextQuestion = this.setNextQuestion.bind(this);
     this.setPreviousQuestion = this.setPreviousQuestion.bind(this);
@@ -133,9 +135,21 @@ class App extends Component {
       }
     }
 
+    const facebookResponse = (response) => {
+      this.setState({ ...this.state, user: response })
+      console.log(this.state.user)
+    }
+
     return (
       <div className="App">
         <div className="App-header">
+          
+          {this.state.user.picture ? 
+            <div>
+              <label>Welcome, {this.state.user.name}!<br/></label><br/>
+              <img src={this.state.user.picture.data.url} height={this.state.user.picture.height} width={this.state.user.picture.width} alt="avatar" />
+            </div>
+            : ''}
           <h1>What Type of Investor Are You?</h1>
         </div>
         {this.state.isLoggedIn ?
@@ -149,12 +163,18 @@ class App extends Component {
             />
             <div className="row">
               <div className="fb-button">
-                <FacebookLoginButton onClick={() => this.login()} />
+                <FacebookLogin
+                  appId="2526891507522295"
+                  // autoLoad
+                  fields="name,email,picture"
+                  onClick={() => this.login()}
+                  callback={facebookResponse}
+                  icon="fa-facebook"
+                />
               </div>
             </div>
           </div>}
       </div>
-
     );
   }
 
