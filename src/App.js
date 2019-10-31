@@ -172,7 +172,9 @@ class App extends Component {
                   fields="name,email,picture"
                   onClick={() => this.login()}
                   callback={facebookResponse}
+                  cssClass="btnFacebook"
                   icon="fa-facebook"
+                  textButton="&nbsp;Sign In with Facebook&nbsp;"
                 />
               </div>
             </div>
