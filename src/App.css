@@ -90,50 +90,53 @@ h1 {
 .block-high {
   text-align: center;
   height: 100%;
-  width: 100px;
+  width: 300px;
   display: inline-block;
   color: #f00;
+  margin-bottom: 30px;
 }
 .block-high .number {
-  font-size: 100px;
+  font-size: 40px;
   font-weight: bold;
+  opacity: 0.4;
 }
 .block-high .string {
-  font-size: 12px;
-  line-height: 18px;
-  opacity: 0.4;
+  font-size: 36px;
+  line-height: 30px;
 }
 .block-medium {
   text-align: center;
   height: 100%;
-  width: 100px;
+  width: 300px;
   display: inline-block;
   color: #ffa500;
+  margin-bottom: 30px;
 }
 .block-medium .number {
-  font-size: 100px;
+  font-size: 40px;
   font-weight: bold;
+  opacity: 0.4;
 }
 .block-medium .string {
-  font-size: 12px;
-  line-height: 18px;
-  opacity: 0.4;
+  font-size: 36px;
+  line-height: 30px;
 }
 .block-neutral {
   text-align: center;
   height: 100%;
-  width: 100px;
+  width: 300px;
   display: inline-block;
   color: #a9a9a9;
+  margin-bottom: 30px;
 }
 .block-neutral .number {
-  font-size: 100px;
+  font-size: 40px;
   font-weight: bold;
+  opacity: 0.4;
 }
 .block-neutral .string {
-  font-size: 12px;
-  line-height: 18px;
-  opacity: 0.4;
+  font-size: 36px;
+  line-height: 30px;
 }
 .btnFacebook { 
   width: 300px;

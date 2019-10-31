@@ -1,54 +1,63 @@
 import React from 'react';
-import loadingJSON from '../loading-circle';
-import Lottie from 'react-lottie'
+// import loadingJSON from '../loading-circle';
+// import Lottie from 'react-lottie';
+import LoadingOverlay from 'react-loading-overlay';
 
-const defaultOption = {
-  loop: true,
-  autoplay: true,
-  animationData: loadingJSON,
-  rendererSettings: {
-    preserveAspectRatio: 'xMidYMid slice'
-  }
-}
+// const defaultOption = {
+//   loop: false,
+//   autoplay: true,
+//   animationData: loadingJSON,
+//   rendererSettings: {
+//     preserveAspectRatio: 'xMidYMid slice'
+//   }
+// }
 
 class Result extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoading: false
+      isLoading: true
     }
   }
 
-  renderSummary(){
-    // this.setState({isLoading: true})
+  renderSummary() {
     let totalRisk = 0;
     this.props.quizResult.map((_data, index) => {
       totalRisk += _data.answers[this.props.answers[index]].riskWeight
     })
-    if(totalRisk > 20){
-      return(
-       <div className="block-high" >
+    if (totalRisk > 20) {
+      setTimeout(() => {
+        this.setState({ isLoading: false });
+      }, 1000);
+      return (
+        <div className="block-high" >
           <div className="number">{totalRisk}</div>
           <div className="string"> High Risk Tolerance</div>
-      </div>
+        </div>
       )
-      this.setState({isLoading: false})
-    }else if(totalRisk > 15){
-      return(
-      <div className="block-medium" >
-        <div className="number">{totalRisk}</div>
-        <div className="string"> Medium Risk Tolerance</div>
-      </div> 
+
+    } else if (totalRisk > 15) {
+      setTimeout(() => {
+        this.setState({ isLoading: false });
+      }, 1000);
+      return (
+        <div className="block-medium" >
+          <div className="number">{totalRisk}</div>
+          <div className="string"> Medium Risk Tolerance</div>
+        </div>
       )
-      this.setState({isLoading: false})     
-    }else if(totalRisk < 15){
-      return(
+
+    } else if (totalRisk < 15) {
+      setTimeout(() => {
+        this.setState({ isLoading: false });
+      }, 1000);
+      return (
         <div className="block-neutral" >
           <div className="number">{totalRisk}</div>
           <div className="string"> Low Risk Tolerance</div>
-        </div> 
+        </div>
       )
-      this.setState({isLoading: false})
+
     }
   }
 
@@ -63,11 +72,17 @@ class Result extends React.Component {
   render() {
     return (
       <div className="quiz-story">
-        <div>
-          <strong>Lets see your results</strong>!
-          <div>{this.renderSummary()}</div>
-        <div>{this.renderQuestions()}</div>
-        </div>
+        <LoadingOverlay
+          active={this.state.isLoading}
+          spinner
+          text='Processing your results...'
+        >
+          <div>
+            <strong>Lets see your results</strong>!
+            <div>{this.renderSummary()}</div>
+            <div>{this.renderQuestions()}</div>
+          </div>
+        </LoadingOverlay>
       </div>
     )
   }
