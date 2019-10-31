@@ -81,6 +81,7 @@ class App extends Component {
     });
   }
 
+  //This function calculates which answer type has the highest number — aka the quiz result.
   getResults() {
     const answersCount = this.state.answersCount;
     const answersCountKeys = Object.keys(answersCount);
