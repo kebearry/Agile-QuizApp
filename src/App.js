@@ -38,7 +38,7 @@ class App extends Component {
     var index = parseInt(e.target.value);
     console.log("for selected question number " + (_self.state.counter + 1) + " answer is " + index + " selected");
     var Qindex = (_self.state.counter)
-    // create map and store all selecred answers with quiz Questions
+    // create map and store all selected answers with quiz Questions
     obj[Qindex] = index;
     _self.setState({ selectedAnswers: obj })
   }
@@ -100,7 +100,7 @@ class App extends Component {
 
   renderQuiz() {
     return (
-      <Quiz viewreults={this.viewreults}
+      <Quiz viewresults={this.viewresults}
         setNextQuestion={this.setNextQuestion}
         counter={this.state.counter}
         setPreviousQuestion={this.setPreviousQuestion}
@@ -143,15 +143,16 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          
-          {this.state.user.picture ? 
+
+          {this.state.user.picture ?
             <div>
-              <label>Welcome, {this.state.user.name}!<br/></label><br/>
+              <label>Welcome, {this.state.user.name}!<br /></label><br />
               <img src={this.state.user.picture.data.url} height={this.state.user.picture.height} width={this.state.user.picture.width} alt="avatar" />
             </div>
             : ''}
           <h1>What Type of Investor Are You?</h1>
         </div>
+        {this.state.result ? this.renderResult() : ''}
         {this.state.isLoggedIn ?
           <div>
             {this.state.result ? this.renderResult() : this.renderQuiz()}
