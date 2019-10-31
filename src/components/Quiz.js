@@ -23,7 +23,7 @@ function Quiz(props) {
 
   return (
       <div key={props.questionId} className="quiz-story">
-        <QuestionCount counter={props.counter} viewreults={props.viewreults}
+        <QuestionCount counter={props.counter} viewresults={props.viewresults}
           counter={props.questionId}
           total={props.questionTotal}
         />

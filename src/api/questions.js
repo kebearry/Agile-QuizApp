@@ -1,7 +1,6 @@
 var quizQuestions = [
     {
       question: "What is your current annual income range?",
-      answerindex : 1,
       answers: [
         {
           type: "",
@@ -31,37 +30,35 @@ var quizQuestions = [
     },
     {
       question: "How much of your monthly disposable income do you put towards investments?",
-      answerindex : 1,
       answers: [
         {
           type: "",
           content: "0% to 25%",
           answer : false,
-          riskWeight: 0
+          riskWeight: 1
         },
         {
           type: "",
           content: "26% to 50%",
           answer : false,
-          riskWeight: 0
+          riskWeight: 2
         },
         {
           type: "",
           content: "51% to 75%",
           answer : false,
-          riskWeight: 0
+          riskWeight: 3
         },
         {
           type: "",
           content: "76% to 100%",
           answer : false,
-          riskWeight: 0
+          riskWeight: 4
         }
       ]
     },
     {
       question: "Which of these statements on financial matters do you most identify with?",
-      answerindex : 1,
       answers: [
         {
           type: "",
@@ -91,7 +88,6 @@ var quizQuestions = [
     },
     {
       question: "Can you confidently define financial terms like PE ratio, market cap, and dividend?",
-      answerindex : 1,
       answers: [
         {
           type: "",
@@ -121,7 +117,6 @@ var quizQuestions = [
     },
     {
       question: "How comfortable do you feel about being hands-off and giving up control over investment products?",
-      answerindex : 1,
       answers: [
         {
           type: "",
@@ -151,7 +146,6 @@ var quizQuestions = [
     },
     {
       question: "How much volatility can you handle when it comes to your investments?",
-      answerindex : 1,
       answers: [
         {
           type: "",
@@ -181,7 +175,6 @@ var quizQuestions = [
     },
     {
       question: "How much information do you need to make buy, sell or hold decisions for your investments?",
-      answerindex : 1,
       answers: [
         {
           type: "",
@@ -211,7 +204,6 @@ var quizQuestions = [
     },
     {
         question: "How would you best describe your current investment situation?",
-        answerindex : 1,
         answers: [
           {
             type: "",

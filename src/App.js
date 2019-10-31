@@ -47,7 +47,7 @@ class App extends Component {
     this.setState({ isLoggedIn: true })
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.setState({
       question: quizQuestions[0].question,
       answerOptions: quizQuestions[0].answers,
@@ -68,6 +68,7 @@ class App extends Component {
       answer: ''
     });
   }
+
   setPreviousQuestion() {
     const counter = this.state.counter - 1;
     const questionId = this.state.questionId - 1;
@@ -121,6 +122,7 @@ class App extends Component {
       <Result quizResult={this.state.allQuestions} answers={this.state.selectedAnswers} />
     );
   }
+
   viewresults(e) {
     e.preventDefault();
     this.setState({ result: true })
@@ -153,7 +155,6 @@ class App extends Component {
             : ''}
           <h1>What Type of Investor Are You?</h1>
         </div>
-        {this.state.result ? this.renderResult() : ''}
         {this.state.isLoggedIn ?
           <div>
             {this.state.result ? this.renderResult() : this.renderQuiz()}

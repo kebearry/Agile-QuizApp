@@ -58,7 +58,6 @@ h1 {
   text-align: left;
     line-height: 1.5;
     padding: 10px;
-    background: #ccc;
 }
 .quiz-story{
   padding: 30px;
@@ -87,4 +86,52 @@ h1 {
   padding-top: 20px;
   display: flex;
   justify-content: center;
+}
+.block-high {
+  text-align: center;
+  height: 100%;
+  width: 100px;
+  display: inline-block;
+  color: #f00;
+}
+.block-high .number {
+  font-size: 100px;
+  font-weight: bold;
+}
+.block-high .string {
+  font-size: 12px;
+  line-height: 18px;
+  opacity: 0.4;
+}
+.block-medium {
+  text-align: center;
+  height: 100%;
+  width: 100px;
+  display: inline-block;
+  color: #ffa500;
+}
+.block-medium .number {
+  font-size: 100px;
+  font-weight: bold;
+}
+.block-medium .string {
+  font-size: 12px;
+  line-height: 18px;
+  opacity: 0.4;
+}
+.block-neutral {
+  text-align: center;
+  height: 100%;
+  width: 100px;
+  display: inline-block;
+  color: #a9a9a9;
+}
+.block-neutral .number {
+  font-size: 100px;
+  font-weight: bold;
+}
+.block-neutral .string {
+  font-size: 12px;
+  line-height: 18px;
+  opacity: 0.4;
 }
