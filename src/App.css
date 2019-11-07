@@ -149,3 +149,26 @@ h1 {
   margin: 5px;
   display: inline-block;
 }
+
+.email-header {
+  font-size: 20px;
+  color: rgb(71, 71, 71)
+}
+
+.email {
+  margin-top: 20px;
+  height: 70px;
+  width: 100px;
+}
+
+.email:hover {
+  background-color: #00477b;
+  color: white;
+  transition: 0.5s
+}
+
+.disable {
+  display: block;
+  width: 200px;
+  margin: 0 auto;
+}

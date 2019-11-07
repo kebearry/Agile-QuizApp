@@ -69,6 +69,23 @@ class Result extends React.Component {
     })
   }
 
+  renderEmailOption() {
+    return (
+      <div className="block-neutral" >
+          <div className="email-header">Click here to Recieve an Email of the Details!</div>
+          <button className="email">Get Email</button>
+        </div>
+    )
+  }
+
+  renderSubscribeToChatbot() {
+    return (
+      <div>
+        <a href="#">Subscribe to our Facebook Chatbot to receieve Personalized Recommendations</a>
+      </div>
+    )
+  }
+
   render() {
     return (
       <div className="quiz-story">
@@ -80,6 +97,7 @@ class Result extends React.Component {
           <div>
             <strong>Lets see your results</strong>!
             <div>{this.renderSummary()}</div>
+            <button className="disable" onClick={()=> window.open('https://www.facebook.com/Is4301-7even-115315709870504/')}>Subscribe to Facebook Chatbot</button>
             <div>{this.renderQuestions()}</div>
           </div>
         </LoadingOverlay>
