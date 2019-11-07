@@ -2,6 +2,12 @@ import React from 'react';
 // import loadingJSON from '../loading-circle';
 // import Lottie from 'react-lottie';
 import LoadingOverlay from 'react-loading-overlay';
+import LowRisk1 from './images/LowRisk_1.png';
+import LowRisk2 from './images/LowRisk_2.png';
+import MedRisk1 from './images/MedRisk_1.png';
+import MedRisk2 from './images/MedRisk_2.png';
+import HighRisk1 from './images/HighRisk_1.png';
+import HighRisk2 from './images/HighRisk_2.png';
 
 // const defaultOption = {
 //   loop: false,
@@ -33,6 +39,14 @@ class Result extends React.Component {
         <div className="block-high" >
           <div className="number">{totalRisk}</div>
           <div className="string"> High Risk Tolerance</div>
+
+          <div className="container" style={{ justifyContent: "center", alignItems: "center" }}>
+            <label>We would recommend... Unit Trusts! Find out more at </label>
+            <a href="https://www.sc.com/sg/investment/unit-trusts/">our bank's product website!</a>
+            <img style={{ marginTop: "20px" }} src={HighRisk1} alt="highrisk1" height={350} width={700} />
+            <img style={{ marginBottom: "-3rem" }} src={HighRisk2} alt="highrisk2" height={350} width={700} />
+          </div>
+
         </div>
       )
 
@@ -44,6 +58,14 @@ class Result extends React.Component {
         <div className="block-medium" >
           <div className="number">{totalRisk}</div>
           <div className="string"> Medium Risk Tolerance</div>
+
+          <div className="container" style={{ justifyContent: "center", alignItems: "center" }}>
+            <label>We would recommend... Premium Currency Investments! Find out more at </label>
+            <a href="https://www.sc.com/sg/investment/premium-currency-investment/">our bank's product website!</a>
+            <img style={{ marginTop: "20px" }} src={MedRisk1} alt="medrisk1" height={350} width={700} />
+            <img style={{ marginBottom: "-3rem" }} src={MedRisk2} alt="medrisk2" height={350} width={700} />
+          </div>
+
         </div>
       )
 
@@ -55,6 +77,14 @@ class Result extends React.Component {
         <div className="block-neutral" >
           <div className="number">{totalRisk}</div>
           <div className="string"> Low Risk Tolerance</div>
+
+          <div className="container" style={{ justifyContent: "center", alignItems: "center" }}>
+            <label>We would recommend... the Bonus$aver savings account! Find out more at </label>
+            <a href="https://www.sc.com/sg/save/current-accounts/bonussaver">our bank's product website!</a>
+            <img style={{ marginTop: "20px" }} src={LowRisk1} alt="lowrisk1" height={350} width={700} />
+            <img style={{ marginBottom: "-3rem" }} src={LowRisk2} alt="lowrisk2" height={350} width={700} />
+          </div>
+
         </div>
       )
 
@@ -72,9 +102,9 @@ class Result extends React.Component {
   renderEmailOption() {
     return (
       <div className="block-neutral" >
-          <div className="email-header">Click here to Recieve an Email of the Details!</div>
-          <button className="email">Get Email</button>
-        </div>
+        <div className="email-header">Click here to Recieve an Email of the Details!</div>
+        <button className="email">Get Email</button>
+      </div>
     )
   }
 
@@ -97,7 +127,7 @@ class Result extends React.Component {
           <div>
             <strong>Lets see your results</strong>!
             <div>{this.renderSummary()}</div>
-            <button className="disable" onClick={()=> window.open('https://www.facebook.com/Is4301-7even-115315709870504/')}>Subscribe to Facebook Chatbot</button>
+            <button className="disable" onClick={() => window.open('https://www.facebook.com/Is4301-7even-115315709870504/')}>Subscribe to Facebook Chatbot</button>
             <div>{this.renderQuestions()}</div>
           </div>
         </LoadingOverlay>
