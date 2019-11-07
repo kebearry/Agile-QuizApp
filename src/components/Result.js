@@ -2,11 +2,9 @@ import React from 'react';
 // import loadingJSON from '../loading-circle';
 // import Lottie from 'react-lottie';
 import LoadingOverlay from 'react-loading-overlay';
-import LowRisk1 from './images/LowRisk_1.png';
+import Img from 'react-image';
 import LowRisk2 from './images/LowRisk_2.png';
-import MedRisk1 from './images/MedRisk_1.png';
 import MedRisk2 from './images/MedRisk_2.png';
-import HighRisk1 from './images/HighRisk_1.png';
 import HighRisk2 from './images/HighRisk_2.png';
 
 // const defaultOption = {
@@ -43,8 +41,7 @@ class Result extends React.Component {
           <div className="container" style={{ justifyContent: "center", alignItems: "center" }}>
             <label>We would recommend... Unit Trusts! Find out more at </label>
             <a href="https://www.sc.com/sg/investment/unit-trusts/">our bank's product website!</a>
-            <img style={{ marginTop: "20px" }} src={HighRisk1} alt="highrisk1" height={350} width={700} />
-            <img style={{ marginBottom: "-3rem" }} src={HighRisk2} alt="highrisk2" height={350} width={700} />
+            <Img style={{ marginTop: "20px", marginBottom: "-3rem" }} src={HighRisk2} alt="highrisk2" height={450} width={900} />
           </div>
 
         </div>
@@ -62,8 +59,7 @@ class Result extends React.Component {
           <div className="container" style={{ justifyContent: "center", alignItems: "center" }}>
             <label>We would recommend... Premium Currency Investments! Find out more at </label>
             <a href="https://www.sc.com/sg/investment/premium-currency-investment/">our bank's product website!</a>
-            <img style={{ marginTop: "20px" }} src={MedRisk1} alt="medrisk1" height={350} width={700} />
-            <img style={{ marginBottom: "-3rem" }} src={MedRisk2} alt="medrisk2" height={350} width={700} />
+            <Img style={{ marginTop: "20px", marginBottom: "-3rem" }} src={MedRisk2} alt="medrisk2" height={450} width={900} />
           </div>
 
         </div>
@@ -81,8 +77,7 @@ class Result extends React.Component {
           <div className="container" style={{ justifyContent: "center", alignItems: "center" }}>
             <label>We would recommend... the Bonus$aver savings account! Find out more at </label>
             <a href="https://www.sc.com/sg/save/current-accounts/bonussaver">our bank's product website!</a>
-            <img style={{ marginTop: "20px" }} src={LowRisk1} alt="lowrisk1" height={350} width={700} />
-            <img style={{ marginBottom: "-3rem" }} src={LowRisk2} alt="lowrisk2" height={350} width={700} />
+            <Img style={{ marginTop: "20px", marginBottom: "-3rem" }} src={LowRisk2} alt="lowrisk2" height={450} width={900} />
           </div>
 
         </div>
