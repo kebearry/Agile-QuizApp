@@ -141,6 +141,7 @@ class App extends Component {
     const facebookResponse = (response) => {
       this.setState({ ...this.state, user: response })
       console.log(this.state.user)
+      localStorage.setItem('user', response)
     }
 
     return (
